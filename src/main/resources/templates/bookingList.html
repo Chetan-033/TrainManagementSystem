@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<title>Train Booking</title>
+</head>
+<body style="background-image: url('img2.jpg');border-bottom-width: 100%">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color:navy">
+		<div class="container-fluid">
+			<a class="navbar-brand text-white" href="/train/">Train Management System</a>
+		</div>
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: skyblue">
+		<div class="container-fluid">
+			
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent" >
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active text-white"
+						aria-current="page" href="adminHome">Home</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="TrainList">Train List</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="AddTrain">Add Train</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="BookingList">Bookings Train</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="MyProfile">My Profile</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="#">Change Password</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="setLogout">Logout</a></li>
+				</ul>
+			</div>
+			<div style="text-align: center;">
+				<a class="nav-link text-white" href="addCourse">Contact Us</a>
+			</div>
+		</div>
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkblue">
+		<div class="container-fluid">
+			<h6 style="color:white ">My Bookings<h6>
+		</div>
+	</nav>
+		<!-- <div>
+		<form class="col-md-4 offset-md-4" th:action=@{/TrainListByDestination} method="post" style="text-align: center;">
+			<div class="mb-3">			
+				<br>
+				<label for="t_from" >From</label>
+				<input type="text" name="t_from">
+				<label for="t_to" >-To</label>
+				<input type="text" name="t_to">
+				<br>
+				<button type="submit" class="btn btn-primary">Search</button> 
+				<label >&</label>
+				<button type="submit" class="btn btn-primary">Reset</button>
+			</div>
+		</form>
+	</div>-->
+	<br><br>
+	<div class="container">
+		<table class="table" style="background-color: white">
+			<thead>
+				<tr style="background-color: skyblue">
+					<th>Name</th>
+					<th>Train Name</th>
+					<th>Travel Date</th>
+					<th>Booking Date</th>
+					<th>Adult</th>
+					<th>Child</th>
+					<th>Total Member</th>
+					<th>Total Amount</th>
+					<!--<th>Invoice</th>
+					<th>Action</th>-->
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="s:${list}">
+					<td th:text="${s.name}"></td>
+					<td th:text="${s.t_name}"></td>
+					<td th:text="${s.t_date}"></td>
+					<td th:text="${s.date}"></td>
+					<td th:text="${s.adult}"></td>
+					<td th:text="${s.child}"></td>
+					<td th:text="${s.totalmember}"></td>
+					<td th:text="${s.totalamount}"></td>
+					<!--<td><a th:href="@{ticketInvoice/{id}(id=${s.b_id})}">Invoice</a></td>
+					<td><a style="color:white;background-color: navy; border: inset; border-color: skyblue;" th:href="@{CancelSeat/{id}(id=${s.b_id})}">Cancel</a></td>-->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<title>Train Booking</title>
+</head>
+<body style="background-image: url('img.jpg');background-size: cover;">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color:navy">
+		<div class="container-fluid">
+			<a class="navbar-brand text-white" href="/train/">Train Management System</a>
+		</div>
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: skyblue">
+		<div class="container-fluid">
+			
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent" >
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active text-white"
+						aria-current="page" href="/train/">Home</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="SerchTrainForHome">Search</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="loginForm">Login</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="/train/">Sing Up</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="/train/">About Us</a></li>
+				</ul>
+			</div>
+			<div style="text-align: center;">
+				<a class="nav-link text-white" href="addCourse">Contact Us</a>
+			</div>
+		</div>
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkblue">
+		<div class="container-fluid">
+			<h6 style="color:white ">Sign-in<h6>
+		</div>
+	</nav>
+	<div class="container my-5 p-5" style="">
+		<form class="col-md-4 offset-md-4" th:action=@{/login} method="post" style="border: 2px solid gray;background-color: white">
+			
+			<h1 style="text-align: center; color: Skyblue;">Login</h1>
+			<div class="mb-3">			
+				&#160<label for="email" class="form-label">Email-Id</label> 
+				&#160<input type="text" class="form-control" name="email" placeholder="email-id/username">&#160
+				
+				&#160<label for="password" class="form-label">Password</label>
+				&#160<input type="password" class="form-control" name="password" placeholder="password....">&#160
+				<a style="color: red" th:text="${wrong}"></a>
+			</div>
+			
+			<center><button type="submit" class="btn btn-primary">Submit</button></center> 
+			<br>
+		</form>
+	</div>	
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
